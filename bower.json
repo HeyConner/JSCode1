@@ -1,0 +1,22 @@
+{
+  "name": "ghub_user",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "conner <c9er99@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "bootstrap": "^3.3.6"
+  }
+}
