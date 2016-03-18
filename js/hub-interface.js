@@ -1,17 +1,10 @@
-$(document).ready(function(){
+var getUser = require('./../js/repos.js').getUsers;
 
-  $('git').click(function(){
-    var username = $('#username').val();
-    var repositories = $('#repo')
-    $('#username').val("");
-    $.get('http://dinoipsum.herokuapp.com/api/',
-    {
-      format: 'html',
-      paragraphs: paragraphs,
-      words: wordcount
-    },
-    function(data, _status, _xhr){
-      $('#result').html(data);
+
+$(document).ready(function(){
+    $(#search).click(function(event) {
+      event.preventDefault();
+      var username = $('#username').val();
+      getUser(username);
     });
   });
-});
