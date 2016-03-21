@@ -2,23 +2,25 @@ var apiKey = require('./../.env').apiKey;
 
 getRepository = function(username){
   $.get('https://api.github.com/users/' + username + '/repos?access_token=' + apiKey).then(function(response) {
-    $('#publicRepository').empty();
+    $('#repo').empty();
     response.forEach(function(repository) {
-      $('#repoResponse').append("<li><a href=" + repository.html_url + " target='_blank'>" + repository.name + "</a></li>");
+      var new_item = $("<li><a href=" + repository.html_url + " target='_blank'>" + repository.name + "</a></li>").hide();
+      $('#repo').append(new_item);
+      new_item.show('slow');
       console.log("It Worked");
     });
   }).fail(function(error){
     alert(error.responseJSON.message);
   });
-};
+}
 
 exports.getUsers = function(username){
   $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response){
     console.log(response);
-    $('#userResponse').text(response.name);
+    $('#userfullname').text(response.name);
     console.log(response.name);
-    getRepos(username);
+    getRepository(username);
   }).fail(function(error){
     console.log(error.responseJSON.message);
   });
-};
+}
