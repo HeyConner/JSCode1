@@ -1,0 +1,15 @@
+$red: #990000;
+$green: #006600;
+.container{
+  margin-right: auto;
+  margin-left: auto;
+  width:750px;
+  background-color: $red;
+  #userfullname{
+    background-color: $green;
+  }
+}
+
+body {
+  background-color: $green;
+}
